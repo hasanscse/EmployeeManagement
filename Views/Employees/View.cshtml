@@ -1,0 +1,39 @@
+﻿@model EmployeeManagement.Models.UpdateEmployeeViewModel
+
+@{
+}
+
+<h1>Edit Emplyee</h1>
+<form method="post" action="View" class="mt-1">
+     <div class="mb-3">
+        <label for="" class="form-label">Id</label>
+        <input type="text" placeholder="Enter Name" class="form-control" id="" asp-for="ID" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Name</label>
+        <input type="text" placeholder="Enter Name" class="form-control" id="" asp-for="Name">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Email Address</label>
+        <input type="email" placeholder="Enter Email" class="form-control" id="email" asp-for="Email">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Salary</label>
+        <input type="text" placeholder="Enter Salary" class="form-control" id="salary" asp-for="Salary">
+
+    </div>
+    <div class="mb-3">
+        <label for="date" class="form-label">Date of Birth</label>
+        <input type="date" class="form-control" id="dateofbirth" asp-for="DateOfBirth">
+    </div>
+
+    <div class="mb-3">
+        <label for="" class="form-label">Department</label>
+        <input type="text" placeholder="Enter Department" class="form-control" id="drpartment" asp-for="Department">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+    <button type="submit" class="btn btn-danger" asp-action="Delete" asp-controller="Employees">Delete</button>
+</form>
