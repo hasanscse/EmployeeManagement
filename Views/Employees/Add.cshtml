@@ -1,0 +1,54 @@
+﻿@model EmployeeManagement.Models.AddEmployeeViewModel
+@{
+}
+
+<script src="~/js/site.js"></script>
+
+<h1>Add Emplyee</h1>
+
+<hr />
+@{
+    if (ViewBag.Message != null)
+    {
+        <div>
+            @ViewBag.Message1
+        </div>
+    }
+}
+<hr />
+
+
+<form method="post" action="Add" class="mt-1">
+    <div class="mb-3">
+        <label for="" class="form-label">Name</label>
+        <input type="text"placeholder="Enter Name" class="form-control" required id="" asp-for="Name">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Email Address</label>
+        <input type="email" placeholder="Enter Email" class="form-control" required id="email" asp-for="Email">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Salary</label>
+        <input type="text" placeholder="Enter Salary" class="form-control" required id="salary" asp-for="Salary">
+      
+    </div>
+    <div class="mb-3">
+        <label for="date" class="form-label">Date of Birth</label>
+        <input type="date" class="form-control" id="dateofbirth" asp-for="DateOfBirth">        
+    </div>   
+
+    <div class="mb-3">
+        <label for="" class="form-label">Department</label>
+       @* <input type="text" placeholder="Enter Department" required class="form-control" id="drpartment" asp-for="Department">*@
+
+
+        <select asp-for="Department" class="form-control" asp-items="@(new SelectList(ViewBag.message,"DEPARTMENT_ID","DEPARTMENT_NAME"))">
+
+        </select>
+
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
